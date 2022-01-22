@@ -431,7 +431,8 @@ Admin/Communication
 </div>
 
 <hr>
-Development / Support
+<div id="devsupp_test">Development / Support</div>
+
 <!-- Work Web Sites 2 -->
 <div class="row">
   <div class="column">
@@ -624,8 +625,9 @@ function set_test(name,title,status){
 }
 (function(){
     var title = 'Home System';
-    var gmail_test=document.getElementById('fritzbox_test');
-    gmail_test.innerHTML=title+' Checking...';
+    var id = 'fritzbox';
+    var test=document.getElementById(id+'_test');	
+    test.innerHTML=title+' Checking...';
     var img=document.createElement('img');
     img.src='//fritz.box/favicon.ico?rand='+Math.random();
     img.onload=function(){set_test('fritzbox',title,1)};
@@ -634,6 +636,18 @@ function set_test(name,title,status){
     document.body.appendChild(img);
 })();
 	
+(function(){
+    var title = 'Development / Support';
+    var id = 'devsupp';
+    var test=document.getElementById(id+'_test');
+    test.innerHTML=title+' Checking...';
+    var img=document.createElement('img');
+    img.src='//fritz.box/favicon.ico?rand='+Math.random();
+    img.onload=function(){set_test(id,title,1)};
+    img.onerror=function(){set_test(id,title,0)};
+    img.style.display='none';
+    document.body.appendChild(img);
+})();	
 </script>
 </body>
 </html>
