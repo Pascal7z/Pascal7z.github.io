@@ -292,12 +292,11 @@ Private
   </div>  
 </div>
 <hr>
-Home System
-
+<div id="fritzbox_test">Home System</div>
 <!-- Home System -->
 <div class="row">
   <div class="column">
-    <div class="content" id="fritzbox_test">
+    <div class="content">
      <img alt="FritzBox"  class="favicon" src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wHp+P8Hz/z/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wbv/f8A7f//AOj//wfP/P8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/xPp9f8A6/b/AOb//wDm//8A7f//B8/8/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/0Mf2v8A5v//Qx/a/wDm//8A5v//AOb//0Mf2v8Hz/z/AAAA/wAAAP8AAAAAAAAAAAAAAABDH9r/M1uc/wDm//9DH9r/Oxmi/0Mf2v8Qte7/Qx/a/wDm//9DH9r/AOb//0Mf2v9DH9r/Qx/a/y4fa9lDH9r/Qx/a/0Mf2v8Qte7/Qx/a/xC17v8xK5L/ELXu/0Mf2v8A5v//Qx/a/wDm//8A5v//Qx/a/wAAAP8AAAAALR9o10Mf2v9COaz/v/X//0Mf2v9DH9r/NT7J/xC17v9DH9r/Qx/a/0Mf2v9DH9r/EXmA/0Mf2v8rGEq+AAAAAEMf2v9DH9r/Qx/a/0Mf2v+/9f//AOb//wDm//8A5v//Qx/a/wDm//8A5v//AOb//0Mf2v9DH9r/Qx/a/wAAAABDH9r/AAAAAAAAAAAAAAAAAAAA/7/1//8A5v//AOb//wDm//8A5v//AOb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/v/X//wDm//8A6///AOb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+/9f//AOb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8fFBgFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAPx/AAD4PwAA8B8AAOAPAADABwAAAAAAAAACAAAAAgAAAAIAAOAfAADwPwAA+H8AAPx/AAD//wAA//8AAA">
 		<a href="http://fritz.box" target="_blank_homesys">FritzBox (H)</a>
     </div>
@@ -617,19 +616,20 @@ function updateClock() {
 }
 updateClock(); // initial call
 	
-function set_test(name,status){
+function set_test(name,title,status){
     var el=document.getElementById(name+'_test');
-    el.innerHTML=status?'online':'offline';
+    el.innerHTML=status?title+' online':title' offline';
     el.style.color=status?'#0a0':'#a00';
     el.style.fontWeight='bold';
 }
 (function(){
+    var title = 'Home System'
     var gmail_test=document.getElementById('fritzbox_test');
-    gmail_test.innerHTML='Checking...';
+    gmail_test.innerHTML=title+' Checking...';
     var img=document.createElement('img');
     img.src='//fritz.box/favicon.ico?rand='+Math.random();
-    img.onload=function(){set_test('fritzbox',1)};
-    img.onerror=function(){set_test('fritzbox',0)};
+    img.onload=function(){set_test('fritzbox',title,1)};
+    img.onerror=function(){set_test('fritzbox',title,0)};
     img.style.display='none';
     document.body.appendChild(img);
 })();
