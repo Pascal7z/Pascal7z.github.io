@@ -618,7 +618,7 @@ updateClock(); // initial call
 	
 function set_test(name,title,status){
     var el=document.getElementById(name+'_test');
-    el.innerHTML=status?title+' online':title' offline';
+    el.innerHTML=status?title+' online':title+' offline';
     el.style.color=status?'#0a0':'#a00';
     el.style.fontWeight='bold';
 }
