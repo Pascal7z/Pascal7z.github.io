@@ -642,7 +642,7 @@ function set_test(name,title,status){
     var test=document.getElementById(id+'_test');	
     test.innerHTML=title+' Checking...';
     var img=document.createElement('img');
-    img.src='//fritz.box/favicon.ico';
+    img.src='http://fritz.box/favicon.ico';
     img.onload=function(){set_test('fritzbox',title,1)};
     img.onerror=function(){set_test('fritzbox',title,0)};
     img.style.display='none';
