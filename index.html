@@ -642,7 +642,7 @@ function set_test(name,title,status){
     var test=document.getElementById(id+'_test');	
     test.innerHTML=title+' Checking...';
     var img=document.createElement('img');
-    img.src='//fritz.box/favicon.ico?rand='+Math.random();
+    img.src='//fritz.box/favicon.ico';
     img.onload=function(){set_test('fritzbox',title,1)};
     img.onerror=function(){set_test('fritzbox',title,0)};
     img.style.display='none';
@@ -655,7 +655,7 @@ function set_test(name,title,status){
     var test=document.getElementById(id+'_test');
     test.innerHTML=title+' Checking...';
     var img=document.createElement('img');
-    img.src='//repo.cute.dlh.de/favicon.ico?rand='+Math.random();
+    img.src='//repo.cute.dlh.de/favicon.ico';
     img.onload=function(){set_test(id,title,1)};
     img.onerror=function(){set_test(id,title,0)};
     img.style.display='none';
