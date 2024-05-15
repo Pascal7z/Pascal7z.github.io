@@ -600,7 +600,7 @@ function set_test(name,title,status){
     var test=document.getElementById(id+'_test');
     test.innerHTML=title+' Checking...';
     var img=document.createElement('img');
-    img.src='//repo.cute.dlh.de/favicon.ico';
+    img.src='//app-az.cute.dlh.de/admin/img/icon-16.png';
     img.onload=function(){set_test(id,title,1)};
     img.onerror=function(){set_test(id,title,0)};
     img.style.display='none';
