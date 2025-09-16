@@ -364,7 +364,8 @@ Private
 </div>
 
 <hr>
-Admin/Communication
+<div id="ebase_test">Admin / Communication</div>
+
 <!-- Work Web Sites 1 -->
 <div class="row">
   <div class="column">
@@ -556,6 +557,19 @@ function set_test(name,title,status){
     img.style.display='none';
     document.body.appendChild(img);
 })();
+
+(function(){
+    var title = 'Admin / Communication';
+    var id = 'ebase';
+    var test=document.getElementById(id+'_test');	
+    test.innerHTML=title+' Checking...';
+    var img=document.createElement('img');
+    img.src='https://ebase.dlh.de/etc/designs/ebase-basics/clientlib-site/build/assets/favicon/favicon-16x16.png';
+    img.onload=function(){set_test('ebase',title,1)};
+    img.onerror=function(){set_test('ebase',title,0)};
+    img.style.display='none';
+    document.body.appendChild(img);
+})();
 	
 (function(){
     var title = 'Development / Support';
@@ -572,5 +586,6 @@ function set_test(name,title,status){
 </script>
 </body>
 </html>
+
 
 
